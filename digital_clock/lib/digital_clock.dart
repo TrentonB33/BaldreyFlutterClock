@@ -17,7 +17,7 @@ enum _Element {
 final _lightTheme = {
   _Element.background: Color(0xFF81B3FE),
   _Element.text: Colors.white,
-  _Element.shadow: Colors.black,
+  _Element.shadow: Colors.grey[800],
 };
 
 final _darkTheme = {
@@ -101,12 +101,13 @@ class _DigitalClockState extends State<DigitalClock> {
     final hour =
         DateFormat(widget.model.is24HourFormat ? 'HH' : 'hh').format(_dateTime);
     final minute = DateFormat('mm').format(_dateTime);
-    final fontSize = MediaQuery.of(context).size.width / 5.2;
+    final fontSize = MediaQuery.of(context).size.width / 2.5;
     final offset = -fontSize / 7;
     final defaultStyle = TextStyle(
       color: colors[_Element.text],
-      fontFamily: 'PressStart2P',
+      fontFamily: 'Adumu',
       fontSize: fontSize,
+      fontWeight: FontWeight.bold,
       shadows: [
         Shadow(
           blurRadius: 0,
