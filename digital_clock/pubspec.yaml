@@ -25,3 +25,6 @@ flutter:
     - family: Adumu
       fonts:
         - asset: third_party/Adumu.ttf
+    - family: C800
+      fonts:
+        - asset: third_party/C800.ttf

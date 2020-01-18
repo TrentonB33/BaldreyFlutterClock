@@ -101,13 +101,12 @@ class _DigitalClockState extends State<DigitalClock> {
     final hour =
         DateFormat(widget.model.is24HourFormat ? 'HH' : 'hh').format(_dateTime);
     final minute = DateFormat('mm').format(_dateTime);
-    final fontSize = MediaQuery.of(context).size.width / 2.5;
+    final fontSize = MediaQuery.of(context).size.width / 4;
     final offset = -fontSize / 7;
     final defaultStyle = TextStyle(
       color: colors[_Element.text],
-      fontFamily: 'Adumu',
+      fontFamily: 'C800',
       fontSize: fontSize,
-      fontWeight: FontWeight.bold,
       shadows: [
         Shadow(
           blurRadius: 0,
