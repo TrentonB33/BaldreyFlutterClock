@@ -108,7 +108,7 @@ class _DigitalClockState extends State<DigitalClock> {
     final hour =
         DateFormat(widget.model.is24HourFormat ? 'HH' : 'hh').format(_dateTime);
     final minute = DateFormat('mm').format(_dateTime);
-    final width = MediaQuery.of(context).size.width / 3;
+    final width = MediaQuery.of(context).size.width / 3.5;
     final fontSize = width;
     final defaultStyle = TextStyle(
       color: colors[_Element.text],
@@ -118,18 +118,29 @@ class _DigitalClockState extends State<DigitalClock> {
     // print('Font size is: $fontSize');
     // print('Widthis: $width');
 
-    return Container(
-      color: colors[_Element.background],
-      child: Center(
-        child: DefaultTextStyle(
-          style: defaultStyle,
-          child: Row(
-            children: <Widget>[
-              Opacity(opacity: 0.6, child: Text('$hour:$minute')),
-            ],
+    return Stack(
+      alignment: Alignment.center,
+      children: <Widget>[
+        Container(
+          color: colors[_Element.background],
+          child: Center(
+            child: DefaultTextStyle(
+              style: defaultStyle,
+              child: Column(
+                children: <Widget>[
+                  Text('$hour:$minute'),
+                  Text(
+                    "$location",
+                    style: TextStyle(
+                      fontSize: width / 17,
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ),
         ),
-      ),
+      ],
     );
   }
 }
