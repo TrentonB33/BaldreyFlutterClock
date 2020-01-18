@@ -22,6 +22,7 @@ void main() {
   }
 
   // This creates a clock that enables you to customize it.
+  // This creates a clock that enables you to customize it.
   //
   // The [ClockCustomizer] takes in a [ClockBuilder] that consists of:
   //  - A clock widget (in this case, [DigitalClock])
