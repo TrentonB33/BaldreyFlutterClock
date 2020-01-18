@@ -101,8 +101,8 @@ class _DigitalClockState extends State<DigitalClock> {
     final hour =
         DateFormat(widget.model.is24HourFormat ? 'HH' : 'hh').format(_dateTime);
     final minute = DateFormat('mm').format(_dateTime);
-    final width = MediaQuery.of(context).size.width;
-    final fontSize = width / 3;
+    final width = MediaQuery.of(context).size.width / 3;
+    final fontSize = width;
     final offset = -fontSize / 7;
     final defaultStyle = TextStyle(
       color: colors[_Element.text],
@@ -121,9 +121,7 @@ class _DigitalClockState extends State<DigitalClock> {
             child: Center(
               child: Row(
                 children: <Widget>[
-                  Expanded(
-                    child: Text('$hour:$minute'),
-                  ),
+                  Text('$hour:$minute'),
                 ],
               ),
             ),
