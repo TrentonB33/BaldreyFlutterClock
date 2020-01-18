@@ -99,6 +99,12 @@ class _DigitalClockState extends State<DigitalClock> {
     final colors = Theme.of(context).brightness == Brightness.light
         ? _lightTheme
         : _darkTheme;
+
+    //Model Variables
+    String temperature = widget.model.temperatureString;
+    String location = widget.model.location;
+    String weather = widget.model.weatherString;
+
     final hour =
         DateFormat(widget.model.is24HourFormat ? 'HH' : 'hh').format(_dateTime);
     final minute = DateFormat('mm').format(_dateTime);
