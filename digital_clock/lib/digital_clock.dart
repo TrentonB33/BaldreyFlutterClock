@@ -110,14 +110,13 @@ class _DigitalClockState extends State<DigitalClock> {
     final minute = DateFormat('mm').format(_dateTime);
     final width = MediaQuery.of(context).size.width / 3;
     final fontSize = width;
-    final offset = -fontSize / 7;
     final defaultStyle = TextStyle(
       color: colors[_Element.text],
       fontFamily: 'C800',
       fontSize: fontSize,
     );
-    print('Font size is: $fontSize');
-    print('Widthis: $width');
+    // print('Font size is: $fontSize');
+    // print('Widthis: $width');
 
     return Container(
       color: colors[_Element.background],
