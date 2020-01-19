@@ -18,7 +18,7 @@ enum _Element {
 
 final _lightTheme = {
   _Element.background: Color(0xFF81B3FE),
-  _Element.text: Colors.white,
+  _Element.text: Colors.grey,
   _Element.shadow: Colors.grey[800],
 };
 
@@ -150,15 +150,15 @@ class _DigitalClockState extends State<DigitalClock> {
                       Text(
                         "$location",
                         style: TextStyle(
-                          fontSize: width / 25,
+                          fontFamily: 'MaterialIcons-Regular',
+                          fontSize: width / 20,
                         ),
                       ),
-                      Text(
-                        'Temperature: $temperature',
-                        style: TextStyle(
-                          fontSize: width / 25,
-                        ),
-                      ),
+                      Text('Temperature: $temperature',
+                          style: TextStyle(
+                            fontFamily: 'MaterialIcons-Regular',
+                            fontSize: width / 20,
+                          ))
                     ],
                   ),
                 ),
