@@ -131,23 +131,28 @@ class _DigitalClockState extends State<DigitalClock> {
           child: DefaultTextStyle(
             style: defaultStyle,
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                CutoutWidget(
-                  child: Text(
-                    '$hour:$minute',
-                  ),
-                  color: Colors.purple,
+                Column(
+                  children: <Widget>[
+                    CutoutWidget(
+                      child: Text(
+                        '$hour:$minute',
+                      ),
+                      color: Colors.black,
+                    ),
+                  ],
                 ),
                 Text(
                   "$location",
                   style: TextStyle(
+                    fontFamily: 'MaterialIcons-Regular',
                     fontSize: width / 17,
                   ),
                 ),
                 Text(
                   'Temperature: $temperature',
                   style: TextStyle(
+                    fontFamily: 'MaterialIcons-Regular',
                     fontSize: width / 10,
                   ),
                 ),
