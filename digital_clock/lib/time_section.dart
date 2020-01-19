@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:digital_clock/CutoutWidget.dart';
+import 'package:digital_clock/cutout_widget.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter_clock_helper/model.dart';
 

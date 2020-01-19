@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'package:digital_clock/ExtraSection.dart';
+import 'package:digital_clock/info_section.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_clock_helper/model.dart';
 import 'package:flutter/material.dart';
-import 'TimeSection.dart';
+import 'time_section.dart';
 
 /// A basic digital clock.
 ///
