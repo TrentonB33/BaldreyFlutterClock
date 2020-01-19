@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2020 Bytes of Business All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -109,29 +109,47 @@ class _DigitalClockState extends State<DigitalClock> {
     final hour =
         DateFormat(widget.model.is24HourFormat ? 'HH' : 'hh').format(_dateTime);
     final minute = DateFormat('mm').format(_dateTime);
-    final width = MediaQuery.of(context).size.width / 3;
+    final width = MediaQuery.of(context).size.width / 3.5;
     final fontSize = width;
-    final offset = -fontSize / 7;
     final defaultStyle = TextStyle(
       color: colors[_Element.text],
       fontFamily: 'C800',
       fontSize: fontSize,
     );
-    print('Font size is: $fontSize');
-    print('Widthis: $width');
+    // print('Font size is: $fontSize');
+    // print('Widthis: $width');
 
-    return Container(
-      color: colors[_Element.background],
-      child: Center(
-        child: DefaultTextStyle(
-          style: defaultStyle,
-          child: Row(
-            children: <Widget>[
-              Opacity(opacity: 0.6, child: Text('$hour:$minute')),
-            ],
+    return Stack(
+      alignment: Alignment.center,
+      children: <Widget>[
+        Text(
+          "$weather",
+          style: TextStyle(
+            fontSize: width,
+            color: Colors.amber,
           ),
         ),
-      ),
+        Positioned(
+          top: 10,
+          bottom: 10,
+          child: Center(
+            child: DefaultTextStyle(
+              style: defaultStyle,
+              child: Column(
+                children: <Widget>[
+                  Text('$hour:$minute'),
+                  Text(
+                    "$location",
+                    style: TextStyle(
+                      fontSize: width / 17,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
