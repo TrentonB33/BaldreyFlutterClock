@@ -107,8 +107,8 @@ class _DigitalClockState extends State<DigitalClock> {
     final hour =
         DateFormat(widget.model.is24HourFormat ? 'HH' : 'hh').format(_dateTime);
     final minute = DateFormat('mm').format(_dateTime);
-    final width = MediaQuery.of(context).size.width / 3.5;
-    final fontSize = width;
+    final width = MediaQuery.of(context).size.width;
+    final fontSize = width / 3.5;
     final defaultStyle = TextStyle(
       color: colors[_Element.text],
       fontFamily: 'C800',
@@ -123,7 +123,7 @@ class _DigitalClockState extends State<DigitalClock> {
         Text(
           "$weather",
           style: TextStyle(
-            fontSize: width,
+            fontSize: 100,
             color: Colors.amber,
           ),
         ),
@@ -132,23 +132,34 @@ class _DigitalClockState extends State<DigitalClock> {
             style: defaultStyle,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
                 CutoutWidget(
-                  child: Text(
-                    '$hour:$minute',
+                  child: Container(
+                    width: width,
+                    child: Text(
+                      '$hour:$minute',
+                    ),
                   ),
                   color: Colors.purple,
                 ),
-                Text(
-                  "$location",
-                  style: TextStyle(
-                    fontSize: width / 17,
-                  ),
-                ),
-                Text(
-                  'Temperature: $temperature',
-                  style: TextStyle(
-                    fontSize: width / 10,
+                Container(
+                  color: Colors.purple,
+                  child: Row(
+                    children: <Widget>[
+                      Text(
+                        "$location",
+                        style: TextStyle(
+                          fontSize: width / 25,
+                        ),
+                      ),
+                      Text(
+                        'Temperature: $temperature',
+                        style: TextStyle(
+                          fontSize: width / 25,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ],
