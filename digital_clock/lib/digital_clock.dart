@@ -127,44 +127,46 @@ class _DigitalClockState extends State<DigitalClock> {
             color: Colors.amber,
           ),
         ),
-        Center(
-          child: DefaultTextStyle(
-            style: defaultStyle,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: <Widget>[
-                CutoutWidget(
-                  child: Container(
-                    width: width,
-                    child: Text(
-                      '$hour:$minute',
-                    ),
+        Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            Expanded(
+              flex: 5,
+              child: CutoutWidget(
+                child: Container(
+                  //color: Colors.purple,
+                  child: Text(
+                    '$hour:$minute',
+                    //style: defaultStyle,
+                    style: defaultStyle,
                   ),
-                  color: Colors.purple,
                 ),
-                Container(
-                  color: Colors.purple,
-                  child: Row(
-                    children: <Widget>[
-                      Text(
-                        "$location",
+                color: Colors.purple,
+              ),
+            ),
+            Expanded(
+              child: Container(
+                color: Colors.purple,
+                child: Row(
+                  children: <Widget>[
+                    Text(
+                      "$location",
+                      style: TextStyle(
+                        fontFamily: 'MaterialIcons-Regular',
+                        fontSize: width / 20,
+                      ),
+                    ),
+                    Text('Temperature: $temperature',
                         style: TextStyle(
                           fontFamily: 'MaterialIcons-Regular',
                           fontSize: width / 20,
-                        ),
-                      ),
-                      Text('Temperature: $temperature',
-                          style: TextStyle(
-                            fontFamily: 'MaterialIcons-Regular',
-                            fontSize: width / 20,
-                          ))
-                    ],
-                  ),
+                        ))
+                  ],
                 ),
-              ],
+              ),
             ),
-          ),
+          ],
         ),
       ],
     );
