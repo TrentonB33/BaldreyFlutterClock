@@ -19,9 +19,6 @@ class DigitalClock extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // print('Font size is: $fontSize');
-    // print('Widthis: $width');
-
     return Column(
       children: <Widget>[
         Expanded(
