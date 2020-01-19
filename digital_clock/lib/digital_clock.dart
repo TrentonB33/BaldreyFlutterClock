@@ -4,11 +4,13 @@
 
 import 'dart:async';
 
+import 'package:digital_clock/weather_anim.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_clock_helper/model.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'CutoutWidget.dart';
+import 'package:flare_flutter/flare_actor.dart';
 
 enum _Element {
   background,
@@ -114,12 +116,10 @@ class _DigitalClockState extends State<DigitalClock> {
       fontFamily: 'C800',
       fontSize: fontSize,
     );
-    // print('Font size is: $fontSize');
-    // print('Widthis: $width');
-
     return Stack(
       alignment: Alignment.center,
       children: <Widget>[
+        WeatherAnim(),
         Text(
           "$weather",
           style: TextStyle(
