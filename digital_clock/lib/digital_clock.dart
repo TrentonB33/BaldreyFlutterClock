@@ -5,10 +5,10 @@
 import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/cupertino.dart' as prefix0;
 import 'package:flutter_clock_helper/model.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'CutoutWidget.dart';
 
 enum _Element {
   background,
@@ -127,31 +127,31 @@ class _DigitalClockState extends State<DigitalClock> {
             color: Colors.amber,
           ),
         ),
-        Positioned(
-          top: 10,
-          bottom: 10,
-          child: Center(
-            child: DefaultTextStyle(
-              style: defaultStyle,
-              child: Column(
-                children: <Widget>[
-                  Text(
+        Center(
+          child: DefaultTextStyle(
+            style: defaultStyle,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                CutoutWidget(
+                  child: Text(
                     '$hour:$minute',
                   ),
-                  Text(
-                    "$location",
-                    style: TextStyle(
-                      fontSize: width / 17,
-                    ),
+                  color: Colors.purple,
+                ),
+                Text(
+                  "$location",
+                  style: TextStyle(
+                    fontSize: width / 17,
                   ),
-                  Text(
-                    'Temperature: $temperature',
-                    style: TextStyle(
-                      fontSize: width / 10,
-                    ),
+                ),
+                Text(
+                  'Temperature: $temperature',
+                  style: TextStyle(
+                    fontSize: width / 10,
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
         ),
