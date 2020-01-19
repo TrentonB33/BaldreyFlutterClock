@@ -69,9 +69,7 @@ class _DigitalClockState extends State<DigitalClock> {
   }
 
   void _updateModel() {
-    setState(() {
-      // Cause the clock to rebuild when the model changes.
-    });
+    setState(() {});
   }
 
   void _updateTime() {
@@ -79,7 +77,6 @@ class _DigitalClockState extends State<DigitalClock> {
       _dateTime = DateTime.now();
       // Update once per minute. If you want to update every second, use the
       // following code.
-      widget.model.temperature++;
       _timer = Timer(
         Duration(minutes: 1) -
             Duration(seconds: _dateTime.second) -
@@ -137,11 +134,19 @@ class _DigitalClockState extends State<DigitalClock> {
               style: defaultStyle,
               child: Column(
                 children: <Widget>[
-                  Text('$hour:$minute'),
+                  Text(
+                    '$hour:$minute',
+                  ),
                   Text(
                     "$location",
                     style: TextStyle(
                       fontSize: width / 17,
+                    ),
+                  ),
+                  Text(
+                    'Temperature: $temperature',
+                    style: TextStyle(
+                      fontSize: width / 10,
                     ),
                   ),
                 ],
