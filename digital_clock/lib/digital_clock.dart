@@ -79,6 +79,7 @@ class _DigitalClockState extends State<DigitalClock> {
       _dateTime = DateTime.now();
       // Update once per minute. If you want to update every second, use the
       // following code.
+      widget.model.temperature++;
       _timer = Timer(
         Duration(minutes: 1) -
             Duration(seconds: _dateTime.second) -
@@ -101,9 +102,9 @@ class _DigitalClockState extends State<DigitalClock> {
         : _darkTheme;
 
     //Model Variables
-    String temperature = widget.model.temperatureString;
-    String location = widget.model.location;
-    String weather = widget.model.weatherString;
+    final String temperature = widget.model.temperatureString;
+    final String location = widget.model.location;
+    final String weather = widget.model.weatherString;
 
     final hour =
         DateFormat(widget.model.is24HourFormat ? 'HH' : 'hh').format(_dateTime);
