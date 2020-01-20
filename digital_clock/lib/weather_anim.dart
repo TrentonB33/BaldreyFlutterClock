@@ -12,7 +12,10 @@ class WeatherAnim extends StatelessWidget {
   final String weather;
   @override
   Widget build(BuildContext context) {
-    if (weather == "cloudy" || weather == "sunny" || weather == "rainy") {
+    if (weather == "cloudy" ||
+        weather == "sunny" ||
+        weather == "rainy" ||
+        weather == "snowy") {
       return new FlareActor(
         "third_party/$weather.flr",
         fit: BoxFit.contain,

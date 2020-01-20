@@ -23,6 +23,7 @@ flutter:
     - third_party/sunny.flr
     - third_party/cloudy.flr
     - third_party/rainy.flr
+    - third_party/snowy.flr
   fonts:
     - family: Curvilingus
       fonts:

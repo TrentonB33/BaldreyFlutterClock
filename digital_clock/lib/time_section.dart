@@ -111,9 +111,6 @@ class _TimeSectionState extends State<TimeSection>
     return Stack(
       alignment: Alignment.center,
       children: <Widget>[
-        WeatherAnim(
-          weather: weather,
-        ),
         ClockTime(
           time: Text(
             '$hour:$minute',
