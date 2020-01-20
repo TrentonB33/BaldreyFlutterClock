@@ -1,5 +1,7 @@
 import 'package:flare_flutter/flare_actor.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_clock_helper/model.dart';
 
 class WeatherAnim extends StatelessWidget {
   const WeatherAnim({
@@ -10,15 +12,15 @@ class WeatherAnim extends StatelessWidget {
   final String weather;
   @override
   Widget build(BuildContext context) {
-    if (weather == "sunny") {
+    if (weather == "cloudy" || weather == "sunny" || weather == "rainy") {
       return new FlareActor(
-        "third_party/sunny.flr",
+        "third_party/$weather.flr",
         fit: BoxFit.contain,
         animation: "Untitled",
       );
     } else {
       return Container(
-        color: Colors.black,
+        color: Colors.grey,
       );
     }
   }

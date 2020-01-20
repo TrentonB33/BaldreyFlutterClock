@@ -39,8 +39,8 @@ class CutoutTextPainter extends CustomPainter {
         size.center(Offset.zero) - _textPainter.size.center(Offset.zero);
     final textRect = textOffset & _textPainter.size;
 
-    print('Text Offset is: $textOffset');
-    print('text Rect is: $textRect');
+    // print('Text Offset is: $textOffset');
+    //print('text Rect is: $textRect');
 
     // The box surrounding the text should be 10 pixels larger, with 4 pixels corner radius
     final boxRect =
