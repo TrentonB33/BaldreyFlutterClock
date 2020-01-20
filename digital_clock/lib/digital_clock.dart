@@ -26,9 +26,9 @@ class DigitalClock extends StatelessWidget {
             model,
           ),
         ),
-        Expanded(
-          child: ExtraSection(),
-        ),
+        /* Expanded(
+          child: InfoSection(),
+        ), */
       ],
     );
   }

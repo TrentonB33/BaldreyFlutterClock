@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:digital_clock/weather_anim.dart';
 import 'package:flutter/material.dart';
 import 'package:digital_clock/cutout_widget.dart';
 import 'package:intl/intl.dart';
@@ -110,23 +111,22 @@ class _TimeSectionState extends State<TimeSection>
     return Stack(
       alignment: Alignment.center,
       children: <Widget>[
-        Text(
+        WeatherAnim(
+          weather: weather,
+        ),
+        /* Text(
           "$weather",
           style: TextStyle(
             fontSize: 100,
             color: Colors.amber,
           ),
-        ),
+        ),*/
         CutoutWidget(
-          child: Container(
-            //color: Colors.purple,
-            child: Text(
-              '$hour:$minute',
-              //style: defaultStyle,
-              style: defaultStyle,
-            ),
+          child: Text(
+            '$hour:$minute',
+            style: defaultStyle,
           ),
-          color: Colors.purple,
+          color: Colors.grey[700],
         ),
       ],
     );

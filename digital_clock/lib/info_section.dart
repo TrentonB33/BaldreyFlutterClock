@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
 
-class ExtraSection extends StatefulWidget {
+class InfoSection extends StatefulWidget {
   @override
-  _ExtraSectionState createState() => _ExtraSectionState();
+  _InfoSectionState createState() => _InfoSectionState();
 }
 
-class _ExtraSectionState extends State<ExtraSection> {
+class _InfoSectionState extends State<InfoSection> {
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
 
     return Container(
       child: Container(
-        color: Colors.purple,
         child: Row(
           children: <Widget>[
             Text(
