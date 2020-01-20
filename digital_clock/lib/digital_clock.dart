@@ -22,13 +22,16 @@ class DigitalClock extends StatelessWidget {
     return Column(
       children: <Widget>[
         Expanded(
+          flex: 5,
           child: TimeSection(
             model,
           ),
         ),
-        /* Expanded(
-          child: InfoSection(),
-        ), */
+        Expanded(
+          child: Center(
+            child: InfoSection(model),
+          ),
+        ),
       ],
     );
   }

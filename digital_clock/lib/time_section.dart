@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:digital_clock/weather_anim.dart';
 import 'package:flutter/material.dart';
-import 'package:digital_clock/cutout_widget.dart';
+import 'package:digital_clock/clock_time.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter_clock_helper/model.dart';
 
@@ -121,13 +121,12 @@ class _TimeSectionState extends State<TimeSection>
             color: Colors.amber,
           ),
         ),*/
-        CutoutWidget(
-          child: Text(
+        ClockTime(
+          time: Text(
             '$hour:$minute',
             style: defaultStyle,
           ),
-          color: Colors.grey[700],
-        ),
+        )
       ],
     );
   }

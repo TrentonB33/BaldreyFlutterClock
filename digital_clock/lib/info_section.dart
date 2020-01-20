@@ -46,23 +46,24 @@ class _InfoSectionState extends State<InfoSection> {
     final String location = widget.model.location;
 
     return Container(
-      child: Container(
-        child: Row(
-          children: <Widget>[
-            Text(
-              "$location",
+      margin: EdgeInsets.symmetric(horizontal: 30),
+      color: Colors.blueGrey[400],
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: <Widget>[
+          Text(
+            "$location",
+            style: TextStyle(
+              fontFamily: 'MaterialIcons-Regular',
+              fontSize: width / 25,
+            ),
+          ),
+          Text('Temperature: $temperature',
               style: TextStyle(
                 fontFamily: 'MaterialIcons-Regular',
-                fontSize: width / 20,
-              ),
-            ),
-            Text('Temperature: $temperature',
-                style: TextStyle(
-                  fontFamily: 'MaterialIcons-Regular',
-                  fontSize: width / 20,
-                ))
-          ],
-        ),
+                fontSize: width / 25,
+              ))
+        ],
       ),
     );
   }
