@@ -16,7 +16,8 @@ class WeatherAnim extends StatelessWidget {
         weather == "sunny" ||
         weather == "rainy" ||
         weather == "snowy" ||
-        weather == "thunderstorm") {
+        weather == "thunderstorm" ||
+        weather == "foggy") {
       return new FlareActor(
         "third_party/$weather.flr",
         //fit: BoxFit.contain,

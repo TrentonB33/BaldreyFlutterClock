@@ -13,7 +13,7 @@ enum _Element {
 
 final _lightTheme = {
   _Element.background: Color(0xFF81B3FE),
-  _Element.text: Colors.grey,
+  _Element.text: Colors.red,
   _Element.shadow: Colors.grey[800],
 };
 
