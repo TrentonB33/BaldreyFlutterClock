@@ -114,13 +114,6 @@ class _TimeSectionState extends State<TimeSection>
         WeatherAnim(
           weather: weather,
         ),
-        /* Text(
-          "$weather",
-          style: TextStyle(
-            fontSize: 100,
-            color: Colors.amber,
-          ),
-        ),*/
         ClockTime(
           time: Text(
             '$hour:$minute',
