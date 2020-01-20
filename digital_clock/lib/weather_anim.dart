@@ -16,10 +16,9 @@ class WeatherAnim extends StatelessWidget {
         fit: BoxFit.contain,
         animation: "Untitled",
       );
-    } else if (weather == "thunderstorm") {
+    } else {
       return Container(
         color: Colors.black,
-
       );
     }
   }

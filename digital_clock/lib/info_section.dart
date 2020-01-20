@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_clock_helper/model.dart';
 
-class ExtraSection extends StatefulWidget {
-  const ExtraSection(this.model);
+class InfoSection extends StatefulWidget {
+  const InfoSection(this.model);
 
   final ClockModel model;
 
@@ -10,7 +10,7 @@ class ExtraSection extends StatefulWidget {
   _InfoSectionState createState() => _InfoSectionState();
 }
 
-class _ExtraSectionState extends State<ExtraSection> {
+class _InfoSectionState extends State<InfoSection> {
   @override
   void initState() {
     super.initState();
@@ -19,7 +19,7 @@ class _ExtraSectionState extends State<ExtraSection> {
   }
 
   @override
-  void didUpdateWidget(ExtraSection oldWidget) {
+  void didUpdateWidget(InfoSection oldWidget) {
     super.didUpdateWidget(oldWidget);
     if (widget.model != oldWidget.model) {
       oldWidget.model.removeListener(_updateModel);
