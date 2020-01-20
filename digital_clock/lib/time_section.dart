@@ -1,10 +1,9 @@
 import 'dart:async';
 
-import 'package:digital_clock/weather_anim.dart';
+import 'package:digital_clock/InheritedClockModel.dart';
 import 'package:flutter/material.dart';
 import 'package:digital_clock/clock_time.dart';
 import 'package:intl/intl.dart';
-import 'package:flutter_clock_helper/model.dart';
 
 enum _Element {
   background,
@@ -25,9 +24,7 @@ final _darkTheme = {
 };
 
 class TimeSection extends StatefulWidget {
-  const TimeSection(this.model);
-
-  final ClockModel model;
+  const TimeSection();
 
   @override
   _TimeSectionState createState() => _TimeSectionState();
@@ -42,30 +39,13 @@ class _TimeSectionState extends State<TimeSection>
   @override
   void initState() {
     super.initState();
-    widget.model.addListener(_updateModel);
     _updateTime();
-    _updateModel();
-  }
-
-  @override
-  void didUpdateWidget(TimeSection oldWidget) {
-    super.didUpdateWidget(oldWidget);
-    if (widget.model != oldWidget.model) {
-      oldWidget.model.removeListener(_updateModel);
-      widget.model.addListener(_updateModel);
-    }
   }
 
   @override
   void dispose() {
     _timer?.cancel();
-    widget.model.removeListener(_updateModel);
-    widget.model.dispose();
     super.dispose();
-  }
-
-  void _updateModel() {
-    setState(() {});
   }
 
   void _updateTime() {
@@ -94,8 +74,9 @@ class _TimeSectionState extends State<TimeSection>
         ? _lightTheme
         : _darkTheme;
 
-    final hour =
-        DateFormat(widget.model.is24HourFormat ? 'HH' : 'hh').format(_dateTime);
+    final hour = DateFormat(
+            InheritedClockModel.of(context).model.is24HourFormat ? 'HH' : 'hh')
+        .format(_dateTime);
     final minute = DateFormat('mm').format(_dateTime);
     final width = MediaQuery.of(context).size.width;
     final fontSize = width / 3.5;
@@ -106,18 +87,11 @@ class _TimeSectionState extends State<TimeSection>
       fontSize: fontSize,
     );
 
-    final String weather = widget.model.weatherString;
-
-    return Stack(
-      alignment: Alignment.center,
-      children: <Widget>[
-        ClockTime(
-          time: Text(
-            '$hour:$minute',
-            style: defaultStyle,
-          ),
-        )
-      ],
+    return ClockTime(
+      time: Text(
+        '$hour:$minute',
+        style: defaultStyle,
+      ),
     );
   }
 }
