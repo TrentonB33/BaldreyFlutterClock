@@ -8,10 +8,6 @@ import 'package:flutter_clock_helper/model.dart';
 import 'package:flutter/material.dart';
 import 'TimeSection.dart';
 
-/// A basic digital clock.
-///
-/// You can do better than this!
-
 class DigitalClock extends StatelessWidget {
   const DigitalClock(this.model);
 
@@ -22,12 +18,13 @@ class DigitalClock extends StatelessWidget {
     return Column(
       children: <Widget>[
         Expanded(
+          flex: 5,
           child: TimeSection(
             model,
           ),
         ),
         Expanded(
-          child: ExtraSection(),
+          child: ExtraSection(model),
         ),
       ],
     );
