@@ -12,9 +12,9 @@ class WeatherThemes {
   }
 
   final ThemeData _lightTheme = ThemeData(
-    backgroundColor: Color(0xFF81B3FE),
-    primaryColor: Colors.red,
-    accentColor: Colors.blueGrey,
+    backgroundColor: Colors.white,
+    primaryColor: Colors.blueGrey,
+    accentColor: Colors.grey[900],
   );
 
   final ThemeData _darkTheme = ThemeData(

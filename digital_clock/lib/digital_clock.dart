@@ -9,7 +9,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_clock_helper/model.dart';
 import 'package:flutter/material.dart';
 import 'time_section.dart';
-import 'package:digital_clock/InheritedClockModel.dart';
+import 'package:digital_clock/inherited_clock_model.dart';
 
 /// A basic digital clock.
 ///
@@ -26,6 +26,7 @@ class DigitalClock extends StatelessWidget {
       model: model,
       child: WeatherTheme(
         child: Stack(children: <Widget>[
+          Container(color: Theme.of(context).backgroundColor),
           WeatherAnim(),
           Column(
             children: <Widget>[

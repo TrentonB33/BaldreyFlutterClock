@@ -1,4 +1,4 @@
-import 'package:digital_clock/InheritedClockModel.dart';
+import 'package:digital_clock/inherited_clock_model.dart';
 import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
