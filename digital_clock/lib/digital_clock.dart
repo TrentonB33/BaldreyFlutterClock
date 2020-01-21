@@ -26,7 +26,7 @@ class DigitalClock extends StatelessWidget {
       model: model,
       child: WeatherTheme(
         child: Stack(children: <Widget>[
-          Container(color: Theme.of(context).backgroundColor),
+          // Container(color: Theme.of(context).backgroundColor),
           WeatherAnim(),
           Column(
             children: <Widget>[
