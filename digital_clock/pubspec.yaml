@@ -29,12 +29,6 @@ flutter:
     - third_party/windy.flr
 
   fonts:
-    - family: Curvilingus
-      fonts:
-        - asset: third_party/Curvilingus.otf
-    - family: Adumu
-      fonts:
-        - asset: third_party/Adumu.ttf
     - family: C800
       fonts:
         - asset: third_party/C800.ttf
