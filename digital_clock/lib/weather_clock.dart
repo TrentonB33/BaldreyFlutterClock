@@ -33,12 +33,11 @@ class WeatherClock extends StatelessWidget {
       model: model,
       child: WeatherTheme(
         child: Stack(children: <Widget>[
-          // Container(color: Theme.of(context).backgroundColor),
           WeatherAnim(),
           Column(
             children: <Widget>[
               Expanded(
-                flex: 5,
+                flex: 4,
                 child: TimeSection(),
               ),
               Expanded(

@@ -19,7 +19,7 @@ class _InfoSectionState extends State<InfoSection> {
 
     final TextStyle infoStyle = TextStyle(
       color: Theme.of(context).accentColor,
-      fontSize: width / 25,
+      fontSize: width / 16,
       fontFamily: 'MaterialIcons-Regular',
     );
 
@@ -28,19 +28,21 @@ class _InfoSectionState extends State<InfoSection> {
         color: Theme.of(context).primaryColor,
         borderRadius: BorderRadius.circular(4),
       ),
-      margin: EdgeInsets.symmetric(horizontal: 15),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: <Widget>[
-          Text(
-            "$location",
-            style: infoStyle,
-          ),
-          Text(
-            '$temperature',
-            style: infoStyle,
-          )
-        ],
+      margin: EdgeInsets.fromLTRB(10, 10, 10, 0),
+      child: Center(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[
+            Text(
+              "$location",
+              style: infoStyle,
+            ),
+            Text(
+              '$temperature',
+              style: infoStyle,
+            )
+          ],
+        ),
       ),
     );
   }

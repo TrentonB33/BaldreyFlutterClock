@@ -12,15 +12,14 @@ class WeatherThemes {
   }
 
   final ThemeData _lightTheme = ThemeData(
-    backgroundColor: Color(0xFF81B3FE),
-    primaryColor: Colors.blueGrey,
-    accentColor: Colors.blue[800],
+    primaryColor: Color(0xff718093),
+    accentColor: Colors.white,
   );
 
   final ThemeData _darkTheme = ThemeData(
-      backgroundColor: Colors.black,
-      primaryColor: Colors.white,
-      accentColor: Colors.red);
+    primaryColor: Colors.white,
+    accentColor: Colors.blueGrey[600],
+  );
 }
 
 class WeatherTheme extends StatefulWidget {
