@@ -11,13 +11,20 @@ import 'package:flutter/material.dart';
 import 'time_section.dart';
 import 'package:digital_clock/inherited_clock_model.dart';
 
-/// A basic digital clock.
+/// A Digital Clock that literally shows you the weather!
 ///
-/// You can do better than this!
+/// This widget is the root widget for the Weather Clock, submitted for the
+/// 2020 Flutter Clock Competition! It utilizes an inherited widget to pass along
+/// the clock model data to all lower widgets.
 
-class DigitalClock extends StatelessWidget {
-  const DigitalClock(this.model);
+class WeatherClock extends StatelessWidget {
+  const WeatherClock(this.model);
 
+  /// The Provided Clock Model
+  ///
+  /// This model tracks all relevant clock peripheral data, such as time format
+  /// settings, weather information, and the like. It's passed to lower widgets
+  /// though the InheritedClockBuilder
   final ClockModel model;
 
   @override

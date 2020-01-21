@@ -44,7 +44,8 @@ class CutoutTextPainter extends CustomPainter {
 
     // The box surrounding the text should be 10 pixels larger, with 4 pixels corner radius
 
-    final boxRect = RRect.fromRectAndRadius(textRect, Radius.circular(4.0));
+    final boxRect =
+        RRect.fromRectAndRadius(textRect.inflate(10), Radius.circular(4.0));
     final boxPaint = Paint()
       ..color = textStyle.color
       ..blendMode = BlendMode.srcOut;

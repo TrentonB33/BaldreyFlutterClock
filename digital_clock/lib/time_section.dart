@@ -52,7 +52,6 @@ class _TimeSectionState extends State<TimeSection>
 
   @override
   Widget build(BuildContext context) {
-
     final hour = DateFormat(
             InheritedClockModel.of(context).model.is24HourFormat ? 'HH' : 'hh')
         .format(_dateTime);
