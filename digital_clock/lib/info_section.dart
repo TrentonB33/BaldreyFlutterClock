@@ -17,24 +17,26 @@ class _InfoSectionState extends State<InfoSection> {
         InheritedClockModel.of(context).model.temperatureString;
     final String location = InheritedClockModel.of(context).model.location;
 
+    final TextStyle infoStyle = TextStyle(
+      color: Theme.of(context).accentColor,
+      fontSize: width / 25,
+      fontFamily: 'MaterialIcons-Regular',
+    );
+
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 30),
-      color: Colors.blueGrey[400],
+      color: Theme.of(context).primaryColor,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           Text(
             "$location",
-            style: TextStyle(
-              fontFamily: 'MaterialIcons-Regular',
-              fontSize: width / 25,
-            ),
+            style: infoStyle,
           ),
-          Text('Temperature: $temperature',
-              style: TextStyle(
-                fontFamily: 'MaterialIcons-Regular',
-                fontSize: width / 25,
-              ))
+          Text(
+            '$temperature',
+            style: infoStyle,
+          )
         ],
       ),
     );

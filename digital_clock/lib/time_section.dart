@@ -82,7 +82,7 @@ class _TimeSectionState extends State<TimeSection>
     final fontSize = width / 3.5;
 
     final defaultStyle = TextStyle(
-      color: colors[_Element.text],
+      color: Theme.of(context).primaryColor,
       fontFamily: 'C800',
       fontSize: fontSize,
     );

@@ -3,6 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:digital_clock/info_section.dart';
+import 'package:digital_clock/themes.dart';
 import 'package:digital_clock/weather_anim.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_clock_helper/model.dart';
@@ -23,22 +24,24 @@ class DigitalClock extends StatelessWidget {
   Widget build(BuildContext context) {
     return InheritedClockModel(
       model: model,
-      child: Stack(children: <Widget>[
-        WeatherAnim(),
-        Column(
-          children: <Widget>[
-            Expanded(
-              flex: 5,
-              child: TimeSection(),
-            ),
-            Expanded(
-              child: Center(
-                child: InfoSection(),
+      child: WeatherTheme(
+        child: Stack(children: <Widget>[
+          WeatherAnim(),
+          Column(
+            children: <Widget>[
+              Expanded(
+                flex: 5,
+                child: TimeSection(),
               ),
-            ),
-          ],
-        ),
-      ]),
+              Expanded(
+                child: Center(
+                  child: InfoSection(),
+                ),
+              ),
+            ],
+          ),
+        ]),
+      ),
     );
   }
 }
