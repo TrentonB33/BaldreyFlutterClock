@@ -16,13 +16,13 @@ class WeatherThemes {
     }
   }
 
-  /// This is the theme that's provided with high brightness.
+  /// This is the theme that's provided with high brightness. (light mode)
   final ThemeData _lightTheme = ThemeData(
     primaryColor: Color(0xff718093),
     accentColor: Colors.white,
   );
 
-  ///This is the theme that's provided with low brightness.
+  ///This is the theme that's provided with low brightness. (dark mode)
   final ThemeData _darkTheme = ThemeData(
     primaryColor: Colors.white,
     accentColor: Colors.blueGrey[600],
