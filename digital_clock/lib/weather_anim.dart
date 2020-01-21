@@ -10,13 +10,12 @@ class WeatherAnim extends StatelessWidget {
 
   bool isValidWeather(String weather) {
     if (weather == "cloudy" ||
-            weather == "sunny" ||
-            weather == "rainy" ||
-            weather == "snowy" ||
-            weather == "thunderstorm" ||
-            weather == "foggy"
-        // || weather == "windy"
-        ) {
+        weather == "sunny" ||
+        weather == "rainy" ||
+        weather == "snowy" ||
+        weather == "thunderstorm" ||
+        weather == "foggy" ||
+        weather == "windy") {
       return true;
     } else {
       return false;
@@ -34,7 +33,13 @@ class WeatherAnim extends StatelessWidget {
       );
     } else {
       return Container(
-          color: Colors.grey, child: Text("THERE'S NO WEATHER HERE"));
+          color: Colors.grey,
+          child: Text(
+            "THERE'S NO WEATHER HERE",
+            style: TextStyle(
+              fontSize: 75.0,
+            ),
+          ));
     }
   }
 }
