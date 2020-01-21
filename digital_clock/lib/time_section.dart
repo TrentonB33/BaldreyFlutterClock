@@ -5,24 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:digital_clock/clock_time.dart';
 import 'package:intl/intl.dart';
 
-enum _Element {
-  background,
-  text,
-  shadow,
-}
-
-final _lightTheme = {
-  _Element.background: Color(0xFF81B3FE),
-  _Element.text: Colors.red,
-  _Element.shadow: Colors.grey[800],
-};
-
-final _darkTheme = {
-  _Element.background: Colors.black,
-  _Element.text: Colors.white,
-  _Element.shadow: Colors.red,
-};
-
 class TimeSection extends StatefulWidget {
   const TimeSection();
 
@@ -70,16 +52,13 @@ class _TimeSectionState extends State<TimeSection>
 
   @override
   Widget build(BuildContext context) {
-    final colors = Theme.of(context).brightness == Brightness.light
-        ? _lightTheme
-        : _darkTheme;
 
     final hour = DateFormat(
             InheritedClockModel.of(context).model.is24HourFormat ? 'HH' : 'hh')
         .format(_dateTime);
     final minute = DateFormat('mm').format(_dateTime);
     final width = MediaQuery.of(context).size.width;
-    final fontSize = width / 3.5;
+    final fontSize = width / 3.6;
 
     final defaultStyle = TextStyle(
       color: Theme.of(context).primaryColor,

@@ -24,10 +24,13 @@ class _InfoSectionState extends State<InfoSection> {
     );
 
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 30),
-      color: Theme.of(context).primaryColor,
+      decoration: BoxDecoration(
+        color: Theme.of(context).primaryColor,
+        borderRadius: BorderRadius.circular(4),
+      ),
+      margin: EdgeInsets.symmetric(horizontal: 15),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
           Text(
             "$location",
