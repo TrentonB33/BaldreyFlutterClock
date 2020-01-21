@@ -1,4 +1,4 @@
-// Copyright 2020 Bytes of Business All rights reserved.
+// Copyright 2020 Bytes of Business, LLC All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -24,7 +24,9 @@ class WeatherClock extends StatelessWidget {
   ///
   /// This model tracks all relevant clock peripheral data, such as time format
   /// settings, weather information, and the like. It's passed to lower widgets
-  /// though the InheritedClockBuilder
+  /// though the InheritedClockBuilder.
+  /// We imagine that you're listening to LoFi style music when you look at this
+  /// clock. We sure were when we developed it.
   final ClockModel model;
 
   @override

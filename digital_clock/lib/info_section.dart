@@ -1,6 +1,18 @@
+// Copyright 2020 Bytes of Business, LLC All rights reserved.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+
 import 'package:digital_clock/inherited_clock_model.dart';
 import 'package:flutter/material.dart';
 
+///This [StatefulWidget] handles the displaying of the other "important"
+///clock information: Location and Temperature.
+///
+/// This InfoSection widget is the second primary section of the WeatherClock
+/// combined with the TimeSection. It handles the display of cool information,
+/// like your current location (or the location that the user has set) and the
+/// current temperature at that location. It uses data taken from the [ClockModel]
+/// that's stored in the InheritedClockModel.
 class InfoSection extends StatefulWidget {
   const InfoSection();
 
@@ -11,6 +23,7 @@ class InfoSection extends StatefulWidget {
 class _InfoSectionState extends State<InfoSection> {
   @override
   Widget build(BuildContext context) {
+    //This is used to calculate a rough font size
     final width = MediaQuery.of(context).size.width;
 
     final String temperature =
